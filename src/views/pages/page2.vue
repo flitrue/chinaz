@@ -1,40 +1,44 @@
 <template>
   <div class="page">
-    <div>总量：{{count}}</div>
+    <div>总量：{{ count }}</div>
     <Row>
       <Col span="16">
-        <div id="line-chart"></div>
+      <div id="line-chart"></div>
       </Col>
       <Col span="8">
-        <div id="pie-chart"></div>
+      <div id="pie-chart"></div>
       </Col>
       <Col span="24">
-        <Card>
-          <p slot="title">
-            地区排名
-          </p>
-          <span slot="extra">当前地区：{{province}}</span>
-          <ul>
-            <li class="li" v-for="(item,index) in list" :key="index">
-              <div class="title">{{(page - 1) * size + index + 1}}、{{item.name}} | {{item.domain}}</div>
-              <div class="info">
-                <span class="span">alexa周排名：{{item.alexa}}</span>
-                <span class="span">百度权重为：{{item.baidu}}</span>
-                <span class="span">PR：{{item.PR}}</span>
-                <span class="span">反链数：{{item.outlink}}</span>
-                <span class="span">得分：{{item.score}}</span>
-              </div>
-              <div class="content">{{item.introduction}}</div>
-            </li>
-          </ul>
-        </Card>
-        <Page
-          style="margin-top: 20px;"
-          :current="page"
-          :page-size="size"
-          :total="total"
-          @on-change="change"
-        />
+      <Card>
+        <p slot="title">
+          地区排名
+        </p>
+        <span slot="extra">当前地区：{{ province }}</span>
+        <ul>
+          <li class="li" v-for="(item,index) in list" :key="index">
+            <div class="title">
+              {{ (page - 1) * size + index + 1 }}、{{ item.name }} | {{ item.domain }}
+            </div>
+            <div class="info">
+              <span class="span">alexa周排名：{{ item.alexa }}</span>
+              <span class="span">百度权重为：{{ item.baidu }}</span>
+              <span class="span">PR：{{ item.PR }}</span>
+              <span class="span">反链数：{{ item.outlink }}</span>
+              <span class="span">得分：{{ item.score }}</span>
+            </div>
+            <div class="content">
+              {{ item.introduction }}
+            </div>
+          </li>
+        </ul>
+      </Card>
+      <Page
+        style="margin-top: 20px;"
+        :current="page"
+        :page-size="size"
+        :total="total"
+        @on-change="change"
+      />
       </Col>
     </Row>
   </div>

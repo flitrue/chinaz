@@ -4,10 +4,6 @@
   </div>
 </template>
 
-<style lang="less" >
-@import "./less/App.less";
-</style>
-
 <script>
 export default {
   name: "App",

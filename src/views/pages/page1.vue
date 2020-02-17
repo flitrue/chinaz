@@ -4,7 +4,7 @@
       <p slot="title">
         网站排行
       </p>
-      <span slot="extra">更新时间：{{date}}</span>
+      <span slot="extra">更新时间：{{ date }}</span>
       <div>
         <ButtonGroup>
           <Button
@@ -12,20 +12,26 @@
             :key="index"
             :type="sort_key==item.label?'primary':'default'"
             @click="handler(index)"
-          >{{item.name}}</Button>
+          >
+            {{ item.name }}
+          </Button>
         </ButtonGroup>
       </div>
       <ul>
         <li class="li" v-for="(item,index) in list" :key="index">
-          <div class="title">{{(page - 1) * size + index + 1}}、{{item.name}} | {{item.domain}}</div>
-          <div class="info">
-            <span class="span">alexa周排名：{{item.alexa}}</span>
-            <span class="span">百度权重为：{{item.baidu}}</span>
-            <span class="span">PR：{{item.PR}}</span>
-            <span class="span">反链数：{{item.outlink}}</span>
-            <span class="span">得分：{{item.score}}</span>
+          <div class="title">
+            {{ (page - 1) * size + index + 1 }}、{{ item.name }} | {{ item.domain }}
           </div>
-          <div class="content">{{item.introduction}}</div>
+          <div class="info">
+            <span class="span">alexa周排名：{{ item.alexa }}</span>
+            <span class="span">百度权重为：{{ item.baidu }}</span>
+            <span class="span">PR：{{ item.PR }}</span>
+            <span class="span">反链数：{{ item.outlink }}</span>
+            <span class="span">得分：{{ item.score }}</span>
+          </div>
+          <div class="content">
+            {{ item.introduction }}
+          </div>
         </li>
       </ul>
     </Card>
