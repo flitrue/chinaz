@@ -7,6 +7,10 @@
 ## 调试
 
 ```
+cd chinaz/
+
+npm install // 安装依赖
+
 npm run dev // 运行项目，浏览器访问http://localhost:8080/ 
 
 npm run build // 打包项目，可以部署在服务器中
